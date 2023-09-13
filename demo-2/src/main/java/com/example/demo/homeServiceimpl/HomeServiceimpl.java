@@ -29,14 +29,14 @@ Student st= (Student) sr.findAll();
 
 	@Override
 	public Student delete(int id) {
-	
-		return null;
+	Student s =sr.delete(id);
+		return s;
 	}
 
 	@Override
 	public Student getSingle(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Student st=sr.deleteById("id");
+		return st;
 	}
 
 }

@@ -28,11 +28,13 @@ public ResponseEntity<Student>getdata(@RequestBody Student s)
 	return new ResponseEntity<Student>(student,HttpStatus.CREATED);
 	
 }
+
 @GetMapping("/getallStu")
 public ResponseEntity<List<Student>> getallstu(){
 	List<Student>stu=hs.getallstu();
 	return new ResponseEntity<List<Student>>(stu, HttpStatus.OK);
 }
+
 @GetMapping("/getsingledata/{id}")
 public ResponseEntity<Student>getSingle(@PathVariable("id")int id)
 {
@@ -40,8 +42,9 @@ public ResponseEntity<Student>getSingle(@PathVariable("id")int id)
 return new ResponseEntity<Student>(st,HttpStatus.OK);	
 }
 
+
 @DeleteMapping("/deletedata/{id}")
-public ResponseEntity<String> delete(@PathVariable ("id")int id) {
+public ResponseEntity<String> delete(@PathVariable("id")int id) {
 	Student st=hs.delete(id);
 	
  return new ResponseEntity<String>("product deleted successfully....", HttpStatus.OK);
